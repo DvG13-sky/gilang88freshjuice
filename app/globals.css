@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    --primary-50: #ECFDF5;
+    --primary-100: #D1FAE5;
+    --primary-500: #10B981;
+    --primary-600: #059669;
+    --primary-700: #047857;
+    --secondary-50: #FFFBEB;
+    --secondary-400: #FBBF24;
+    --secondary-500: #F59E0B;
+    --secondary-600: #D97706;
+    --accent-500: #14B8A6;
+    --danger-50: #FEF2F2;
+    --danger-500: #EF4444;
+    --danger-600: #DC2626;
+    --neutral-0: #FFFFFF;
+    --neutral-50: #F8FAFC;
+    --neutral-100: #F1F5F9;
+    --neutral-200: #E2E8F0;
+    --neutral-400: #94A3B8;
+    --neutral-600: #475569;
+    --neutral-800: #1E293B;
+    --neutral-900: #0F172A;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --neutral-50: #0F172A;
+      --neutral-0: #1E293B;
+      --neutral-800: #F1F5F9;
+      --neutral-600: #CBD5E1;
+    }
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-800 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
